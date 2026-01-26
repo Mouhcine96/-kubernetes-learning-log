@@ -50,3 +50,22 @@ There are many container orchestrators, often tied to specific cloud vendors.
 ## Key takeaway
 Kubernetes is the industry standard for container orchestration.
 Most other solutions are either vendor-locked or niche.
+
+## Why use container orchestrators?
+
+Managing a few containers manually or with scripts works only at small scale.
+At hundreds or thousands of containers, this approach breaks down.
+
+Container orchestrators solve this by:
+
+- Clustering multiple hosts into a single logical system
+- Scheduling containers based on resource availability
+- Enabling service-to-service communication across hosts
+- Managing storage and container lifecycle
+- Providing load balancing and stable access endpoints
+- Optimizing resource usage
+- Enforcing security and access policies
+
+## Key takeaway
+Orchestrators turn many individual machines into one reliable system.
+Kubernetes is the most widely adopted solution for this problem.
