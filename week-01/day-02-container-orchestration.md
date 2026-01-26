@@ -11,3 +11,10 @@ Orchestrators like Kubernetes automate restarts, placement, and scaling.
 ## Key takeaway
 Containers package applications.
 Orchestrators operate systems.
+
+## Containers – recap
+
+- Containers are isolated processes sharing the host OS kernel.
+- They package applications together with their dependencies.
+- Container images are immutable templates.
+- Containers are running instances of images.
