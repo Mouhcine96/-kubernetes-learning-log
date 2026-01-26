@@ -37,3 +37,16 @@ the deployment and lifecycle of containers at scale.
 
 This turns containers into a distributed system with better reliability,
 performance, and cost efficiency.
+
+## Container orchestration tools – overview
+
+There are many container orchestrators, often tied to specific cloud vendors.
+
+- ECS / ACI: Managed, cloud-specific solutions
+- Docker Swarm: Deprecated in practice
+- Nomad: Niche orchestrator, often used with HashiCorp tools
+- Kubernetes: Open-source standard, CNCF project, widely adopted
+
+## Key takeaway
+Kubernetes is the industry standard for container orchestration.
+Most other solutions are either vendor-locked or niche.
