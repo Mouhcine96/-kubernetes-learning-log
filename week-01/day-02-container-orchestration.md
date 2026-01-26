@@ -18,3 +18,22 @@ Orchestrators operate systems.
 - They package applications together with their dependencies.
 - Container images are immutable templates.
 - Containers are running instances of images.
+
+## What is container orchestration?
+
+Running containers on a single host can be sufficient for development.
+In QA and production this breaks down quickly.
+
+Production systems require:
+- Fault tolerance
+- On-demand scalability
+- Efficient resource usage
+- Service discovery
+- External access
+- Zero-downtime updates and rollbacks
+
+Container orchestrators group multiple hosts into a cluster and automate
+the deployment and lifecycle of containers at scale.
+
+This turns containers into a distributed system with better reliability,
+performance, and cost efficiency.
