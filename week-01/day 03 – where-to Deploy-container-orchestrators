@@ -1,0 +1,63 @@
+# Day 03 – Where to Deploy Container Orchestrators
+
+## Core idea
+Container orchestrators are infrastructure-agnostic.
+They can be deployed on almost any compute platform: local, on-premises, or in the cloud.
+
+## Deployment options
+
+Container orchestrators like Kubernetes can run on:
+
+- Bare metal servers
+- Virtual machines
+- Local workstations
+- On-premises data centers
+- Public clouds
+- Hybrid environments
+
+Kubernetes does not require a specific vendor or platform.
+It abstracts the underlying infrastructure.
+
+## Local and on-prem deployments
+
+Kubernetes can be deployed:
+
+- Directly on a workstation
+- Inside virtual machines
+- Using local hypervisors or container runtimes
+
+These setups are commonly used for:
+- Learning
+- Development
+- Testing
+- Proof of concepts
+
+## Cloud deployments
+
+In production, Kubernetes is often deployed on cloud infrastructure such as:
+- Virtual machines provided by cloud vendors
+- IaaS platforms (e.g. EC2, GCE, OpenStack)
+
+This offers scalability but still requires significant operational effort.
+
+## Managed Kubernetes (KaaS)
+
+Operating Kubernetes clusters is complex.
+To reduce this complexity, cloud providers offer **Kubernetes as a Service (KaaS)**.
+
+With KaaS:
+- The control plane is managed by the provider
+- Cluster installation requires only a few commands
+- Operational burden is reduced
+
+Examples include:
+- Amazon EKS
+- Azure AKS
+- Google GKE
+- DigitalOcean Kubernetes
+- IBM Cloud Kubernetes Service
+- VMware Tanzu Kubernetes Grid
+
+## Key takeaway
+Kubernetes can run almost anywhere.
+Managed Kubernetes shifts operational responsibility to cloud providers and is the dominant choice for production environments.
