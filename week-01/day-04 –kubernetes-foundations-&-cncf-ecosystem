@@ -1,0 +1,76 @@
+# Day 04 – Kubernetes Foundations & CNCF Ecosystem
+
+## Core Idea
+Kubernetes is an open-source system for orchestrating containerized applications.  
+It was originally developed by Google, inspired by its internal cluster manager Borg.  
+Today, Kubernetes is maintained by the Cloud Native Computing Foundation (CNCF).
+
+## What I Learned Today
+- Definition of Kubernetes
+- Reasons for using Kubernetes
+- Core features and capabilities of Kubernetes
+- How Kubernetes evolved from Google's Borg
+- The role of the CNCF and its cloud-native project ecosystem
+
+## What is Kubernetes?
+Kubernetes (K8s) is a platform that:
+- Automates deployment of containerized workloads
+- Ensures scalability and fault tolerance
+- Manages resources efficiently
+- Provides service discovery and networking abstractions
+- Unifies operations across different infrastructure environments
+
+In short:  
+Kubernetes turns many individual machines into a single, reliable system for running containerized applications.
+
+## Why Use Kubernetes?
+Kubernetes addresses the key needs of modern production environments:
+- Automatic scheduling
+- Self-healing workloads (restarts, rescheduling, recovery)
+- Horizontal scaling
+- Service discovery and built-in load balancing
+- Zero-downtime deployments and declarative configuration
+- Portability across infrastructure and cloud providers
+
+Kubernetes has become the de facto standard for container orchestration.
+
+## Evolution: From Borg to Kubernetes
+Borg was Google’s internal system for managing large-scale distributed workloads.  
+Concepts inherited from Borg include:
+- Viewing clusters as one large logical system
+- Automatic workload placement (scheduling)
+- Self-healing applications
+- Container-based process isolation
+- Declarative “desired state” operation
+
+Kubernetes is essentially the open-source successor to the ideas that shaped Borg.
+
+## Cloud Native Computing Foundation (CNCF)
+The CNCF hosts Kubernetes and coordinates a broad ecosystem of cloud-native projects.
+
+Examples of key CNCF projects:
+- Argo
+- Cilium
+- Prometheus
+- Fluentd
+- etcd
+- CoreDNS
+- containerd
+- CRI-O
+- Helm
+- Envoy
+- Istio
+- Linkerd
+
+The CNCF provides governance, community support, vendor neutrality, and long-term project stewardship.
+
+## Learning Objectives – Completed
+- Define Kubernetes
+- Explain why Kubernetes is used
+- Describe key Kubernetes features
+- Understand the evolution from Borg to Kubernetes
+- Explain the role of the CNCF
+
+## Key Takeaway
+Kubernetes combines Google’s large-scale operational experience with CNCF’s vendor-neutral open-source governance.  
+This makes Kubernetes the central standard for modern distributed, containerized applications.
