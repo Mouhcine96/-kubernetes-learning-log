@@ -1,0 +1,55 @@
+# Day 01 – Kubernetes Architecture (Control Plane)
+
+## Overview
+The Kubernetes control plane is responsible for managing the entire cluster.
+It makes decisions about scheduling, monitors the cluster state, and ensures that
+the desired state matches the actual state.
+
+The control plane does **not** run application workloads.
+Those are executed on worker nodes.
+
+---
+
+## Core Control Plane Components
+
+A control plane node runs four essential components:
+
+- API Server
+- Scheduler
+- Controller Managers
+- Key-value data store (etcd)
+
+All interactions with the cluster go through the API Server.
+
+---
+
+## API Server
+
+The **kube-apiserver** is the central entry point to the Kubernetes cluster.
+
+### Responsibilities
+- Receives REST requests from users and components (`kubectl`, CI/CD, controllers)
+- Authenticates and authorizes requests
+- Validates configuration data
+- Reads cluster state from etcd
+- Writes desired and updated state back to etcd
+
+### Key fact
+The API Server is the **only** component that communicates directly with etcd.
+
+All other control plane components interact with the cluster state via the API Server.
+
+---
+
+## Scheduler
+
+The **kube-scheduler** is responsible for deciding **where** workloads run.
+
+### Responsibilities
+- Watches for newly created Pods without an assigned node
+- Evaluates all available worker nodes
+- Considers resource availability (CPU, memory)
+- Applies constraints such as:
+  - Labels
+  - Affinity / anti-affinity
+  - Taints and tolerations
