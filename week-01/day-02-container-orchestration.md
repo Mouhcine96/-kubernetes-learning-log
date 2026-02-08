@@ -1,71 +1,98 @@
 # Day 02 – Container Orchestration
 
-## Core idea
-Container orchestration manages containers across multiple hosts to provide scalability,
-fault tolerance, and automation.
+## Grundidee
+Container-Orchestrierung verwaltet Container über mehrere Hosts hinweg,
+um Skalierbarkeit, Ausfallsicherheit und Automatisierung zu ermöglichen.
 
-## Why this matters
-Running containers on a single host does not scale and creates single points of failure.
-Orchestrators like Kubernetes automate restarts, placement, and scaling.
+## Warum das wichtig ist
+Container auf einem einzelnen Host zu betreiben skaliert nicht
+und erzeugt Single Points of Failure.
 
-## Key takeaway
-Containers package applications.
-Orchestrators operate systems.
+Orchestratoren wie Kubernetes automatisieren:
+- Neustarts
+- Platzierung von Workloads
+- Skalierung
 
-## Containers – recap
+## Kernaussage
+**Container verpacken Anwendungen.  
+Orchestratoren betreiben Systeme.**
 
-- Containers are isolated processes sharing the host OS kernel.
-- They package applications together with their dependencies.
-- Container images are immutable templates.
-- Containers are running instances of images.
+---
 
-## What is container orchestration?
+## Container – kurze Wiederholung
 
-Running containers on a single host can be sufficient for development.
-In QA and production this breaks down quickly.
+- Container sind isolierte Prozesse, die sich den Kernel des Host-Systems teilen
+- Sie bündeln Anwendungen inklusive Abhängigkeiten
+- Container-Images sind unveränderliche Vorlagen
+- Container sind laufende Instanzen dieser Images
 
-Production systems require:
-- Fault tolerance
-- On-demand scalability
-- Efficient resource usage
-- Service discovery
-- External access
-- Zero-downtime updates and rollbacks
+---
 
-Container orchestrators group multiple hosts into a cluster and automate
-the deployment and lifecycle of containers at scale.
+## Was ist Container-Orchestrierung?
 
-This turns containers into a distributed system with better reliability,
-performance, and cost efficiency.
+Der Betrieb von Containern auf einem einzelnen Host ist für Entwicklung oft ausreichend.
+In QA- und Produktionsumgebungen stößt dieser Ansatz jedoch schnell an Grenzen.
 
-## Container orchestration tools – overview
+Produktionssysteme erfordern:
+- Ausfallsicherheit
+- Bedarfsorientierte Skalierung
+- Effiziente Ressourcennutzung
+- Service Discovery
+- Externe Erreichbarkeit
+- Zero-Downtime-Updates und Rollbacks
 
-There are many container orchestrators, often tied to specific cloud vendors.
+Container-Orchestratoren fassen mehrere Hosts zu einem Cluster zusammen
+und automatisieren den gesamten Lebenszyklus von Containern im großen Maßstab.
 
-- ECS / ACI: Managed, cloud-specific solutions
-- Docker Swarm: Deprecated in practice
-- Nomad: Niche orchestrator, often used with HashiCorp tools
-- Kubernetes: Open-source standard, CNCF project, widely adopted
+Dadurch entsteht ein verteiltes System mit höherer
+Zuverlässigkeit, Performance und Kosteneffizienz.
 
-## Key takeaway
-Kubernetes is the industry standard for container orchestration.
-Most other solutions are either vendor-locked or niche.
+---
 
-## Why use container orchestrators?
+## Überblick: Container-Orchestrierungswerkzeuge
 
-Managing a few containers manually or with scripts works only at small scale.
-At hundreds or thousands of containers, this approach breaks down.
+Es existieren verschiedene Container-Orchestratoren,
+häufig an bestimmte Cloud-Anbieter gebunden.
 
-Container orchestrators solve this by:
+- **ECS / ACI**  
+  Verwaltete, cloud-spezifische Lösungen
 
-- Clustering multiple hosts into a single logical system
-- Scheduling containers based on resource availability
-- Enabling service-to-service communication across hosts
-- Managing storage and container lifecycle
-- Providing load balancing and stable access endpoints
-- Optimizing resource usage
-- Enforcing security and access policies
+- **Docker Swarm**  
+  Technisch ein Orchestrator, in der Praxis heute kaum noch relevant
 
-## Key takeaway
-Orchestrators turn many individual machines into one reliable system.
-Kubernetes is the most widely adopted solution for this problem.
+- **Nomad**  
+  Nischenlösung, oft im HashiCorp-Ökosystem eingesetzt
+
+- **Kubernetes**  
+  Open-Source-Standard, CNCF-Projekt, weit verbreitet im Produktiveinsatz
+
+---
+
+## Kernaussage
+Kubernetes hat sich als Industriestandard für Container-Orchestrierung etabliert.
+Die meisten Alternativen sind entweder herstellerspezifisch oder Nischenlösungen.
+
+---
+
+## Warum Container-Orchestratoren einsetzen?
+
+Die manuelle Verwaltung weniger Container oder einfache Skripte funktionieren nur im kleinen Maßstab.
+Bei Hunderten oder Tausenden Containern ist dieser Ansatz nicht mehr tragfähig.
+
+Container-Orchestratoren lösen dieses Problem durch:
+
+- Zusammenfassung mehrerer Hosts zu einem logischen Gesamtsystem
+- Automatisches Scheduling anhand verfügbarer Ressourcen
+- Service-zu-Service-Kommunikation über Host-Grenzen hinweg
+- Verwaltung von Storage und Container-Lebenszyklen
+- Load Balancing und stabile Zugriffspunkte
+- Optimierte Ressourcennutzung
+- Durchsetzung von Sicherheits- und Zugriffsrichtlinien
+
+---
+
+## Fazit
+Container-Orchestratoren machen aus vielen einzelnen Maschinen
+ein zuverlässiges, automatisiert betriebenes System.
+
+Kubernetes ist die am weitesten verbreitete Lösung für dieses Problem.
