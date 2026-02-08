@@ -1,54 +1,72 @@
-# Day 04 – Kubernetes Foundations & CNCF Ecosystem
+# Day 04 – Kubernetes Grundlagen & CNCF-Ökosystem
 
-## Core Idea
-Kubernetes is an open-source system for orchestrating containerized applications.  
-It was originally developed by Google, inspired by its internal cluster manager Borg.  
-Today, Kubernetes is maintained by the Cloud Native Computing Foundation (CNCF).
+## Grundidee
+Kubernetes ist ein Open-Source-System zur Orchestrierung containerisierter Anwendungen.  
+Es wurde ursprünglich von Google entwickelt und basiert auf Erfahrungen aus dem internen
+Cluster-Management-System **Borg**.  
 
-## What I Learned Today
-- Definition of Kubernetes
-- Reasons for using Kubernetes
-- Core features and capabilities of Kubernetes
-- How Kubernetes evolved from Google's Borg
-- The role of the CNCF and its cloud-native project ecosystem
+Heute wird Kubernetes von der **Cloud Native Computing Foundation (CNCF)** betreut.
 
-## What is Kubernetes?
-Kubernetes (K8s) is a platform that:
-- Automates deployment of containerized workloads
-- Ensures scalability and fault tolerance
-- Manages resources efficiently
-- Provides service discovery and networking abstractions
-- Unifies operations across different infrastructure environments
+---
 
-In short:  
-Kubernetes turns many individual machines into a single, reliable system for running containerized applications.
+## Was ich heute gelernt habe
+- Definition von Kubernetes
+- Warum Kubernetes eingesetzt wird
+- Zentrale Funktionen und Eigenschaften von Kubernetes
+- Ursprung von Kubernetes aus Googles Borg-System
+- Rolle der CNCF und ihres Cloud-Native-Ökosystems
 
-## Why Use Kubernetes?
-Kubernetes addresses the key needs of modern production environments:
-- Automatic scheduling
-- Self-healing workloads (restarts, rescheduling, recovery)
-- Horizontal scaling
-- Service discovery and built-in load balancing
-- Zero-downtime deployments and declarative configuration
-- Portability across infrastructure and cloud providers
+---
 
-Kubernetes has become the de facto standard for container orchestration.
+## Was ist Kubernetes?
+Kubernetes (K8s) ist eine Plattform, die:
 
-## Evolution: From Borg to Kubernetes
-Borg was Google’s internal system for managing large-scale distributed workloads.  
-Concepts inherited from Borg include:
-- Viewing clusters as one large logical system
-- Automatic workload placement (scheduling)
-- Self-healing applications
-- Container-based process isolation
-- Declarative “desired state” operation
+- Deployment containerisierter Workloads automatisiert
+- Skalierbarkeit und Ausfallsicherheit sicherstellt
+- Ressourcen effizient verwaltet
+- Service Discovery und Netzwerkabstraktionen bereitstellt
+- Den Betrieb über unterschiedliche Infrastrukturen vereinheitlicht
 
-Kubernetes is essentially the open-source successor to the ideas that shaped Borg.
+Kurz gesagt:  
+**Kubernetes macht aus vielen einzelnen Maschinen ein zuverlässiges Gesamtsystem
+für den Betrieb containerisierter Anwendungen.**
+
+---
+
+## Warum Kubernetes?
+Kubernetes adressiert die zentralen Anforderungen moderner Produktionsumgebungen:
+
+- Automatisches Scheduling von Workloads
+- Self-Healing (Neustarts, Neuplatzierung, Wiederherstellung)
+- Horizontale Skalierung
+- Service Discovery und integriertes Load Balancing
+- Zero-Downtime-Deployments und deklarative Konfiguration
+- Portabilität über unterschiedliche Infrastrukturen und Cloud-Anbieter hinweg
+
+Dadurch hat sich Kubernetes als **De-facto-Standard** für Container-Orchestrierung etabliert.
+
+---
+
+## Entwicklung: Von Borg zu Kubernetes
+Borg war Googles internes System zur Verwaltung großer, verteilter Workloads.  
+Viele zentrale Konzepte von Borg wurden in Kubernetes übernommen, unter anderem:
+
+- Cluster als ein großes logisches System zu betrachten
+- Automatische Platzierung von Workloads (Scheduling)
+- Self-Healing-Anwendungen
+- Containerbasierte Prozessisolierung
+- Betrieb über einen deklarativen „Desired State“
+
+Kubernetes ist somit der Open-Source-Nachfolger der Ideen,
+die Google über Jahre im produktiven Maßstab erprobt hat.
+
+---
 
 ## Cloud Native Computing Foundation (CNCF)
-The CNCF hosts Kubernetes and coordinates a broad ecosystem of cloud-native projects.
+Die CNCF hostet Kubernetes und koordiniert ein breites Ökosystem
+cloud-nativer Open-Source-Projekte.
 
-Examples of key CNCF projects:
+Beispiele zentraler CNCF-Projekte:
 - Argo
 - Cilium
 - Prometheus
@@ -62,15 +80,26 @@ Examples of key CNCF projects:
 - Istio
 - Linkerd
 
-The CNCF provides governance, community support, vendor neutrality, and long-term project stewardship.
+Die CNCF sorgt für:
+- Neutrale Governance
+- Community-getriebte Weiterentwicklung
+- Herstellerunabhängigkeit
+- Langfristige Betreuung der Projekte
 
-## Learning Objectives – Completed
-- Define Kubernetes
-- Explain why Kubernetes is used
-- Describe key Kubernetes features
-- Understand the evolution from Borg to Kubernetes
-- Explain the role of the CNCF
+---
 
-## Key Takeaway
-Kubernetes combines Google’s large-scale operational experience with CNCF’s vendor-neutral open-source governance.  
-This makes Kubernetes the central standard for modern distributed, containerized applications.
+## Lernziele – erreicht
+- Kubernetes definieren
+- Einsatzgründe von Kubernetes erklären
+- Zentrale Kubernetes-Funktionen beschreiben
+- Entwicklung von Borg zu Kubernetes verstehen
+- Rolle der CNCF erklären
+
+---
+
+## Fazit
+Kubernetes vereint Googles Erfahrung im Betrieb großer, verteilter Systeme
+mit der offenen, herstellerneutralen Governance der CNCF.
+
+Dadurch ist Kubernetes heute der zentrale Standard
+für moderne, containerisierte und verteilte Anwendungen.
