@@ -1,56 +1,72 @@
-# Day 03 – Where to Deploy Container Orchestrators
+# Day 04 – Wo Container-Orchestratoren betrieben werden
 
-## Core idea
-Container orchestrators are infrastructure-agnostic.
-They can be deployed on almost any compute platform: local, on-premises, or in the cloud.
+## Grundidee
+Container-Orchestratoren sind weitgehend **infrastrukturagnostisch**.
+Sie können auf nahezu jeder Compute-Plattform betrieben werden:
+lokal, On-Premises oder in der Cloud.
 
-## Deployment options
+Kubernetes abstrahiert die zugrunde liegende Infrastruktur
+und ist nicht an einen bestimmten Hersteller gebunden.
 
-Container orchestrators like Kubernetes can run on:
+---
 
-- Bare metal servers
-- Virtual machines
-- Local workstations
-- On-premises data centers
-- Public clouds
-- Hybrid environments
+## Deployment-Optionen
 
-Kubernetes does not require a specific vendor or platform.
-It abstracts the underlying infrastructure.
+Container-Orchestratoren wie Kubernetes können betrieben werden auf:
 
-## Local and on-prem deployments
+- Bare-Metal-Servern
+- Virtuellen Maschinen
+- Lokalen Workstations
+- On-Premises-Rechenzentren
+- Public-Cloud-Plattformen
+- Hybrid-Umgebungen
 
-Kubernetes can be deployed:
+---
 
-- Directly on a workstation
-- Inside virtual machines
-- Using local hypervisors or container runtimes
+## Lokale und On-Premises-Deployments
 
-These setups are commonly used for:
-- Learning
-- Development
-- Testing
-- Proof of concepts
+Kubernetes kann lokal installiert werden:
 
-## Cloud deployments
+- Direkt auf einer Workstation
+- Innerhalb von virtuellen Maschinen
+- Über lokale Hypervisoren oder Container-Runtimes
 
-In production, Kubernetes is often deployed on cloud infrastructure such as:
-- Virtual machines provided by cloud vendors
-- IaaS platforms (e.g. EC2, GCE, OpenStack)
+Diese Setups werden typischerweise genutzt für:
+- Lernen und Schulung
+- Entwicklung
+- Tests
+- Proof-of-Concepts
 
-This offers scalability but still requires significant operational effort.
+---
 
-## Managed Kubernetes (KaaS)
+## Cloud-Deployments
 
-Operating Kubernetes clusters is complex.
-To reduce this complexity, cloud providers offer **Kubernetes as a Service (KaaS)**.
+Im Produktiveinsatz wird Kubernetes häufig auf Cloud-Infrastruktur betrieben, z. B.:
 
-With KaaS:
-- The control plane is managed by the provider
-- Cluster installation requires only a few commands
-- Operational burden is reduced
+- Virtuelle Maschinen von Cloud-Anbietern
+- IaaS-Plattformen wie:
+  - AWS EC2
+  - Google Compute Engine (GCE)
+  - OpenStack
 
-Examples include:
+Diese Variante bietet hohe Skalierbarkeit,
+erfordert jedoch weiterhin erheblichen operativen Aufwand
+für Betrieb und Wartung des Clusters.
+
+---
+
+## Managed Kubernetes (Kubernetes as a Service – KaaS)
+
+Der Betrieb von Kubernetes-Clustern ist komplex.
+Um diesen Aufwand zu reduzieren, bieten Cloud-Anbieter
+**Managed Kubernetes** an.
+
+Merkmale von KaaS:
+- Control Plane wird vom Anbieter betrieben
+- Cluster-Erstellung mit wenigen Befehlen
+- Reduzierter Betriebs- und Wartungsaufwand
+
+Beispiele für Managed-Kubernetes-Angebote:
 - Amazon EKS
 - Azure AKS
 - Google GKE
@@ -58,6 +74,10 @@ Examples include:
 - IBM Cloud Kubernetes Service
 - VMware Tanzu Kubernetes Grid
 
-## Key takeaway
-Kubernetes can run almost anywhere.
-Managed Kubernetes shifts operational responsibility to cloud providers and is the dominant choice for production environments.
+---
+
+## Fazit
+Kubernetes kann nahezu überall betrieben werden.
+In Produktionsumgebungen ist Managed Kubernetes
+heute die dominierende Betriebsform,
+da sie den operativen Aufwand deutlich reduziert.
