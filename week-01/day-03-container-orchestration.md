@@ -1,60 +1,83 @@
-# Day 03 – Why Use Container Orchestrators
+# Day 03 – Warum Container-Orchestratoren notwendig sind
 
-## Problem statement
-Managing a small number of containers manually or with scripts works only at very small scale.
-As soon as systems grow to hundreds or thousands of containers, this approach breaks down.
+## Problemstellung
+Die manuelle Verwaltung einer kleinen Anzahl von Containern
+– sei es per Hand oder über einfache Skripte –
+funktioniert nur in sehr kleinen Umgebungen.
 
-Human-driven operations do not scale reliably.
+Sobald Systeme auf Hunderte oder Tausende Container anwachsen,
+bricht dieser Ansatz unweigerlich zusammen.
 
-## Why orchestration is required
-Production environments require guarantees that cannot be met by manual container management:
+Menschlich gesteuerter Betrieb skaliert nicht zuverlässig.
 
-- Fault tolerance
-- On-demand scalability
-- Efficient resource usage
-- Service discovery
-- Stable external access
-- Zero-downtime updates and rollbacks
+---
 
-These requirements apply across multiple hosts and environments.
+## Warum Orchestrierung erforderlich ist
 
-## What container orchestrators provide
+Produktionsumgebungen stellen Anforderungen,
+die durch manuelles Container-Management nicht erfüllt werden können:
 
-Container orchestrators solve these problems by introducing a control layer that manages containers at scale.
+- Ausfallsicherheit
+- Bedarfsorientierte Skalierung
+- Effiziente Ressourcennutzung
+- Service Discovery
+- Stabile externe Erreichbarkeit
+- Zero-Downtime-Updates und Rollbacks
 
-Key capabilities:
+Diese Anforderungen gelten über mehrere Hosts,
+Netzwerke und Umgebungen hinweg.
+
+---
+
+## Was Container-Orchestratoren leisten
+
+Container-Orchestratoren lösen diese Probleme,
+indem sie eine zentrale Steuerebene einführen,
+die Container im großen Maßstab verwaltet.
+
+Zentrale Fähigkeiten:
 
 - **Clustering**  
-  Multiple hosts are grouped into a single logical system.
+  Mehrere Hosts werden zu einem logischen Gesamtsystem zusammengefasst.
 
 - **Scheduling**  
-  Containers are placed on hosts based on available resources.
+  Container werden anhand verfügbarer Ressourcen auf Hosts verteilt.
 
-- **Service-to-service communication**  
-  Containers can communicate across hosts without manual network configuration.
+- **Service-zu-Service-Kommunikation**  
+  Container können hostübergreifend miteinander kommunizieren,
+  ohne manuelle Netzwerkkonfiguration.
 
-- **Storage binding**  
-  Persistent storage is attached and managed independently of container lifecycles.
+- **Storage-Anbindung**  
+  Persistenter Speicher wird unabhängig vom Container-Lebenszyklus verwaltet.
 
-- **Load balancing & abstraction**  
-  Multiple container instances are exposed as a single service endpoint.
+- **Load Balancing & Abstraktion**  
+  Mehrere Container-Instanzen werden als ein stabiler Service-Endpunkt bereitgestellt.
 
-- **Resource optimization**  
-  CPU and memory are allocated efficiently across the cluster.
+- **Ressourcenoptimierung**  
+  CPU- und Speicherressourcen werden effizient im Cluster verteilt.
 
-- **Security & policies**  
-  Access control and security rules are enforced consistently.
+- **Sicherheit & Richtlinien**  
+  Zugriffs- und Sicherheitsregeln werden zentral und konsistent durchgesetzt.
 
-## Why Kubernetes
-Many orchestration tools exist, but Kubernetes has emerged as the industry standard.
+---
 
-Reasons:
-- Open source
-- Vendor-neutral
-- CNCF-backed
-- Large ecosystem
-- Widely adopted in production
+## Warum Kubernetes
 
-## Key takeaway
-Container orchestrators turn many individual machines into one reliable system.
-Kubernetes is the dominant solution for running containerized workloads at scale.
+Es existieren viele Orchestrierungswerkzeuge,
+doch Kubernetes hat sich als Industriestandard etabliert.
+
+Gründe dafür sind:
+- Open Source
+- Herstellerneutral
+- CNCF-Unterstützung
+- Großes Ökosystem
+- Breite Nutzung im Produktivbetrieb
+
+---
+
+## Fazit
+Container-Orchestratoren machen aus vielen einzelnen Maschinen
+ein stabiles, automatisiert betriebenes Gesamtsystem.
+
+Kubernetes ist die dominierende Lösung
+für
