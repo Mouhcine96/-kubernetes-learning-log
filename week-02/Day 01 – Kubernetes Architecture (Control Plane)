@@ -1,55 +1,123 @@
-# Day 01 – Kubernetes Architecture (Control Plane)
+# Day 05 – Kubernetes Architektur (Control Plane)
 
-## Overview
-The Kubernetes control plane is responsible for managing the entire cluster.
-It makes decisions about scheduling, monitors the cluster state, and ensures that
-the desired state matches the actual state.
+## Überblick
+Die Kubernetes Control Plane ist für die Verwaltung des gesamten Clusters zuständig.
+Sie trifft Entscheidungen zur Platzierung von Workloads, überwacht den Cluster-Zustand
+und stellt sicher, dass der gewünschte Zustand dem tatsächlichen Zustand entspricht.
 
-The control plane does **not** run application workloads.
-Those are executed on worker nodes.
+Die Control Plane führt **keine Anwendungs-Workloads** aus.
+Diese laufen ausschließlich auf den Worker Nodes.
 
 ---
 
-## Core Control Plane Components
+## Zentrale Komponenten der Control Plane
 
-A control plane node runs four essential components:
+Ein Control-Plane-Node betreibt vier essenzielle Komponenten:
 
 - API Server
 - Scheduler
-- Controller Managers
-- Key-value data store (etcd)
+- Controller Manager
+- Key-Value-Datenspeicher (etcd)
 
-All interactions with the cluster go through the API Server.
+**Jede Interaktion mit dem Cluster läuft über den API Server.**
 
 ---
 
 ## API Server
 
-The **kube-apiserver** is the central entry point to the Kubernetes cluster.
+Der **kube-apiserver** ist der zentrale Einstiegspunkt in den Kubernetes-Cluster.
 
-### Responsibilities
-- Receives REST requests from users and components (`kubectl`, CI/CD, controllers)
-- Authenticates and authorizes requests
-- Validates configuration data
-- Reads cluster state from etcd
-- Writes desired and updated state back to etcd
+### Aufgaben
+- Entgegennahme von REST-Anfragen (z. B. von `kubectl`, CI/CD-Systemen, Controllern)
+- Authentifizierung und Autorisierung von Anfragen
+- Validierung von Konfigurationsdaten
+- Lesen des aktuellen Cluster-Zustands aus etcd
+- Schreiben des gewünschten und aktualisierten Zustands nach etcd
 
-### Key fact
-The API Server is the **only** component that communicates directly with etcd.
+### Wichtiger Punkt
+Der API Server ist **die einzige Komponente**, die direkt mit **etcd** kommuniziert.
 
-All other control plane components interact with the cluster state via the API Server.
+Alle anderen Control-Plane-Komponenten greifen **ausschließlich über den API Server**
+auf den Cluster-Zustand zu.
 
 ---
 
 ## Scheduler
 
-The **kube-scheduler** is responsible for deciding **where** workloads run.
+Der **kube-scheduler** entscheidet, **auf welchem Node** ein Pod ausgeführt wird.
 
-### Responsibilities
-- Watches for newly created Pods without an assigned node
-- Evaluates all available worker nodes
-- Considers resource availability (CPU, memory)
-- Applies constraints such as:
+### Aufgaben
+- Überwacht neu erstellte Pods ohne Node-Zuweisung
+- Bewertet alle verfügbaren Worker Nodes
+- Berücksichtigt verfügbare Ressourcen (CPU, Speicher)
+- Bezieht zusätzliche Anforderungen ein, z. B.:
   - Labels
-  - Affinity / anti-affinity
-  - Taints and tolerations
+  - Affinity / Anti-Affinity
+  - Taints und Tolerations
+  - Quality of Service (QoS)
+
+Der Scheduler **startet keine Container**.
+Er trifft ausschließlich Platzierungsentscheidungen
+und meldet diese an den API Server zurück.
+
+---
+
+## Controller Manager
+
+Controller sind Regelkreise, die kontinuierlich den Soll-Zustand
+mit dem Ist-Zustand des Clusters vergleichen.
+
+### Funktionsweise
+- Beobachten den aktuellen Zustand
+- Vergleichen ihn mit dem gewünschten Zustand
+- Korrigieren Abweichungen automatisch
+
+### kube-controller-manager
+Enthält u. a. Controller für:
+- Node-Status
+- ReplicaSets
+- Services und Endpoints
+- Service Accounts und Tokens
+
+### cloud-controller-manager
+Interagiert mit der Infrastruktur des Cloud-Anbieters, z. B.:
+- Node-Lifecycle
+- Load Balancer
+- Cloud-Volumes
+- Netzwerk-Routing
+
+---
+
+## etcd – Key-Value-Datenspeicher
+
+**etcd** ist ein verteilter, konsistenter Key-Value-Store
+und speichert den vollständigen Zustand des Kubernetes-Clusters.
+
+### Gespeicherte Daten
+- Pods
+- Deployments
+- Nodes
+- ConfigMaps
+- Secrets
+- Netzwerk- und Konfigurationsdaten
+
+### Eigenschaften
+- Starke Konsistenz
+- Append-only Schreibmodell
+- Regelmäßige Kompaktierung alter Daten
+- Kritische Abhängigkeit für die Cluster-Verfügbarkeit
+
+Nur der API Server darf Daten aus etcd lesen oder schreiben.
+
+---
+
+## Fazit
+Die Control Plane ist das Gehirn von Kubernetes:
+
+- Der API Server ist die zentrale Schnittstelle
+- Der Scheduler entscheidet über die Platzierung von Workloads
+- Controller sorgen für Stabilität und Selbstheilung
+- etcd speichert den gesamten Cluster-Zustand
+
+Worker Nodes führen aus –  
+die Control Plane steuert.
